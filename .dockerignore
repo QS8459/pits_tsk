@@ -1,0 +1,5 @@
+.venv
+.evn
+postgres
+alembic
+*__pycache__
