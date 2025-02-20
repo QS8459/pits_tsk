@@ -7,6 +7,7 @@ COPY . .
 COPY requirements.txt /app
 
 RUN pip install -r requirements.txt
+RUN mkdir /app/uploaded
 
 ENV PIT_PG_USR=pits
 ENV PIT_PG_PWD=burg
