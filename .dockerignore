@@ -1,5 +1,6 @@
 .venv
 .evn
 postgres
-alembic
+alembic/versions/*
 *__pycache__
+uploaded
