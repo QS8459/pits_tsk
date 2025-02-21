@@ -12,7 +12,7 @@ class Account(Base):
     password: Mapped[String] = mapped_column(String, nullable=False)
     # img_uid: Mapped[UUID] = mapped_column(ForeignKey("public.file.uid"), default=None, nullable=True)
 
-    image: Mapped["File"] = relationship("File", back_populates="public.file.uid")
+    image: Mapped["File"] = relationship("File", back_populates="account")
 
     def hash_passwd(self, password):
         self.password = sha256.using().hash(password)

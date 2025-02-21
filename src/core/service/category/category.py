@@ -10,7 +10,7 @@ class CategoryService(BaseService):
     def __init__(self, session: AsyncSession):
         super().__init__(session, Category)
 
-    async def before_add(self):
+    async def before_add(self, **kwargs):
         pass
 
 
