@@ -9,7 +9,7 @@ class File(Base):
 
     title: Mapped[String] = mapped_column(String(250), nullable=False)
     path: Mapped[String] = mapped_column(String(1000), nullable=False)
-    type: Mapped[String] = mapped_column(String(10), nullable=False)
+    type: Mapped[String] = mapped_column(String(50), nullable=False)
     owner: Mapped[UUID] = mapped_column(ForeignKey("public.account.uid"), nullable=True)
 
     account: Mapped["Account"] = relationship("Account", foreign_keys=[owner])

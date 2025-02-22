@@ -5,7 +5,7 @@ from fastapi import Depends
 from src.conf.settings import settings
 
 reusable_oauth = OAuth2PasswordBearer(
-    tokenUrl="http://127.0.0.1:8000/api/v1/account/authorization/", scheme_name="jwt"
+    tokenUrl="api/v1/account/authorization/", scheme_name="jwt"
 )
 
 
@@ -29,7 +29,11 @@ def gen_jwt_token(data: dict, expiration_time: int | None = None) -> dict:
             key=settings.JWT_SECRET_KEY,
             algorithm=settings.JWT_ALGORITHM,
         )
-        return {"access": access, "refresh": refresh}
+        return {
+            "access_token": access,
+            "refresh_token": refresh,
+            "token_type": "bearer",
+        }
     except Exception as e:
         raise e
 
