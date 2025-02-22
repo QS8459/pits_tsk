@@ -5,7 +5,7 @@ from fastapi import Depends
 from src.conf.settings import settings
 
 reusable_oauth = OAuth2PasswordBearer(
-    tokenUrl="/api/v1/account/authorization/", scheme_name="jwt"
+    tokenUrl="http://127.0.0.1:8000/api/v1/account/authorization/", scheme_name="jwt"
 )
 
 
